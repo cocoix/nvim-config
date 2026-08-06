@@ -29,8 +29,23 @@ return {
       -- See :h blink-cmp-config-keymap for defining your own keymap
       keymap = { preset = "super-tab" },
 
+      -- Match insert mode's super-tab behavior in Ex commands: show candidates
+      -- automatically, then use Tab to accept the selected item.
+      cmdline = {
+        enabled = true,
+        keymap = { preset = "super-tab" },
+        completion = {
+          menu = {
+            auto_show = function() return vim.fn.getcmdtype() == ":" end,
+          },
+        },
+      },
+
       -- (Default) Only show the documentation popup when manually triggered
-      completion = { documentation = { auto_show = false } },
+      completion = {
+        documentation = { auto_show = true },
+        menu = { border = "rounded" },
+      },
 
       -- (Default) list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`

@@ -1,6 +1,7 @@
 {
   "blink.cmp": { "branch": "main", "commit": "cba53eff1948109ec0f47cbead4f07494d1e25c9" },
   "blink.lib": { "branch": "main", "commit": "8b04d0e0acc8565cfa4dd291a89a9212b7262633" },
+  "cendre": { "branch": "main", "commit": "a35f41a0f8f8b61d122691761c56e40b649204fe" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "gruvbox-material": { "branch": "master", "commit": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79" },
   "lualine.nvim": { "branch": "master", "commit": "221ce6b2d999187044529f49da6554a92f740a96" },

@@ -36,3 +36,5 @@ require("lazy").setup({
   install = { colorscheme = { "gruvbox-material" } }, -- 安装插件界面使用的配色方案
   checker = { enabled = true }, -- 自动检查更新
 })
+
+vim.cmd.colorscheme("cendre")
