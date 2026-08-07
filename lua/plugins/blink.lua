@@ -1,3 +1,4 @@
+-- https://main.cmp.saghen.dev/
 return {
   {
     "saghen/blink.cmp",
@@ -27,13 +28,21 @@ return {
       -- C-k: Toggle signature help (if signature.enabled = true)
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      keymap = { preset = "super-tab" },
+      keymap = {
+        preset = "super-tab",
+        ["<C-e>"] = { "hide", "fallback" },
+      },
 
-      -- Match insert mode's super-tab behavior in Ex commands: show candidates
-      -- automatically, then use Tab to accept the selected item.
+      -- Match insert mode's super-tab behavior in Ex commands. If automatic
+      -- completion was suppressed (for example, after retyping the same text),
+      -- Tab explicitly triggers it instead of falling back to a literal ^I.
       cmdline = {
         enabled = true,
-        keymap = { preset = "super-tab" },
+        keymap = {
+          preset = "super-tab",
+          ["<Tab>"] = { "select_and_accept", "show" },
+          ["<C-e>"] = { "hide", "fallback" },
+        },
         completion = {
           menu = {
             auto_show = function() return vim.fn.getcmdtype() == ":" end,
@@ -44,7 +53,14 @@ return {
       -- (Default) Only show the documentation popup when manually triggered
       completion = {
         documentation = { auto_show = true },
-        menu = { border = "rounded" },
+        menu = {
+          auto_show = true,
+          border = "rounded",
+        },
+        trigger = {
+          show_on_trigger_character = true,
+          show_on_insert_on_trigger_character = true,
+        },
       },
 
       -- (Default) list of enabled providers defined so that you can extend it

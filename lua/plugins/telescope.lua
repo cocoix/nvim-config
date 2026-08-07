@@ -8,15 +8,15 @@ return {
 
   keys = {
     vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files() end,
-      { desc = "Telescope find files" }),
+      { desc = "Files" }),
 
     vim.keymap.set("n", "<leader>fg", function() require("telescope.builtin").live_grep() end,
-      { desc = "Telescope live grep" }),
+      { desc = "Live Grep" }),
 
     vim.keymap.set("n", "<leader>fb", function() require("telescope.builtin").buffers() end,
-      { desc = "Telescope buffers" }),
+      { desc = "Buffers" }),
 
     vim.keymap.set("n", "<leader>fh", function() require("telescope.builtin").help_tags() end,
-      { desc = "Telescope help tags" }),
+      { desc = "Help" }),
   }
 }

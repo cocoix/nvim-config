@@ -9,6 +9,20 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     lazy = false, -- neo-tree will lazily load itself
+    keys = {
+      {
+        "<leader>p",
+        mode = { "n", "v" },
+        "<cmd>Neotree<cr>",
+        desc = "文件树"
+      },
+      {
+        "<leader>e",
+        mode = { "n", "v" },
+        "<cmd>Neotree source=buffers<cr>",
+        desc = "Buffer 树"
+      }
+    }
   },
   {
     "mikavilpas/yazi.nvim",
