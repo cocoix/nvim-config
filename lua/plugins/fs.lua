@@ -9,17 +9,20 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     lazy = false, -- neo-tree will lazily load itself
+    opts = {
+      close_if_last_window = true,
+    },
     keys = {
       {
         "<leader>p",
         mode = { "n", "v" },
-        "<cmd>Neotree<cr>",
+        "<cmd>Neotree toggle<cr>",
         desc = "文件树"
       },
       {
         "<leader>e",
         mode = { "n", "v" },
-        "<cmd>Neotree source=buffers<cr>",
+        "<cmd>Neotree source=buffers toggle<cr>",
         desc = "Buffer 树"
       }
     }
