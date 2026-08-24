@@ -3,6 +3,8 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
     config = function()
+      local hostname = vim.uv.os_gethostname()
+
       vim.lsp.config("lua_ls", {
         capabilities = require("blink.cmp").get_lsp_capabilities(),
         settings = {
@@ -28,14 +30,34 @@ return {
       })
 
       vim.lsp.config("nixd", {
+        cmd = { "nixd" },
+        filetypes = { "nix" },
         capabilities = require("blink.cmp").get_lsp_capabilities(),
         root_markers = {
           "flake.nix",
-          "shell.nix",
           "default.nix",
           ".git",
         },
+        settings = {
+          nixd = {
+            nixpkgs = {
+              expr = "import <nixpkgs> { }",
+            },
+            formatting = {
+              command = { "nixfmt" },
+            },
+            options = {
+              nixos = {
+                expr = string.format(
+                  '(builtins.getFlake (toString ./.)).nixosConfigurations.%q.options',
+                  hostname
+                ),
+              },
+            }
+          }
+        }
       })
+      vim.lsp.enable("nixd")
     end,
   },
   {
@@ -51,7 +73,6 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "nixd",
       },
     },
   }
