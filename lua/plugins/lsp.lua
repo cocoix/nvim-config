@@ -26,6 +26,16 @@ return {
           },
         },
       })
+
+      vim.lsp.config("nixd", {
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
+        root_markers = {
+          "flake.nix",
+          "shell.nix",
+          "default.nix",
+          ".git",
+        },
+      })
     end,
   },
   {
@@ -41,6 +51,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
+        "nixd",
       },
     },
   }
