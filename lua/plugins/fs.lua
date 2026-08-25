@@ -1,33 +1,6 @@
 ---@type LazySpec
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    lazy = false, -- neo-tree will lazily load itself
-    opts = {
-      close_if_last_window = true,
-    },
-    keys = {
-      {
-        "<leader>p",
-        mode = { "n", "v" },
-        "<cmd>Neotree toggle<cr>",
-        desc = "文件树"
-      },
-      {
-        "<leader>e",
-        mode = { "n", "v" },
-        "<cmd>Neotree source=buffers toggle<cr>",
-        desc = "Buffer 树"
-      }
-    }
-  },
-  {
     "mikavilpas/yazi.nvim",
     version = "*", -- use the latest stable version
     event = "VeryLazy",
@@ -55,8 +28,7 @@ return {
     },
     ---@type YaziConfig | {}
     opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
+      open_for_directories = true,
       keymaps = {
         show_help = "<f1>",
       },
