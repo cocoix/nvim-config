@@ -1,5 +1,10 @@
 return {
   {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "Aejkatappaja/cendre",
     lazy = false,
     priority = 1000,
