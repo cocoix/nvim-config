@@ -10,7 +10,8 @@ return {
       })
 
       wk.add({
-        { "<leader>f", group = "Telescope" }
+        { "<leader>f", group = "Telescope" },
+        { "<leader>g", group = "Git" },
       })
     end,
     keys = {
