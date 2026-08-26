@@ -1,3 +1,5 @@
+-- 检测当前文件的缩进空格数，设置 shiftwidth、tabstop 和 softtabstop
+
 local function detect_indent_width(bufnr)
   if vim.bo[bufnr].buftype ~= "" or not vim.bo[bufnr].modifiable then
     return
