@@ -4,4 +4,4 @@ require("core.config")
 require("core.autocmd")
 require("core.lazy-init")
 
-vim.cmd.colorscheme("cendre")
+vim.cmd.colorscheme("oldworld")

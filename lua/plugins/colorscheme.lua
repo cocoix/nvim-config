@@ -5,16 +5,6 @@ return {
     priority = 1000,
   },
   {
-    "Aejkatappaja/cendre",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      background = "medium", -- "hard" | "medium" | "soft"
-      italic_virtual_text = false,
-      italic_comments = false;
-    }
-  },
-  {
     "sainnhe/gruvbox-material",
     lazy = true,
     config = function()
