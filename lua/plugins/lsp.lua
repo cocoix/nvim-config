@@ -29,6 +29,30 @@ return {
         },
       })
 
+      vim.lsp.config("clangd", {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--completion-style=detailed",
+          "--header-insertion=iwyu",
+        },
+        filetypes = {
+          "c",
+          "cpp",
+          "objc",
+          "objcpp",
+        },
+        root_markers = {
+          ".clangd",
+          "compile_commands.json",
+          "compile_flags.txt",
+          ".git",
+        },
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
+      })
+      vim.lsp.enable("clangd")
+
       vim.lsp.config("nixd", {
         cmd = { "nixd" },
         filetypes = { "nix" },
