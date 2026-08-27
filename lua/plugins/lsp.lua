@@ -29,6 +29,7 @@ return {
         },
       })
 
+      ------------------------ C/C++ START ------------------------
       vim.lsp.config("clangd", {
         cmd = {
           "clangd",
@@ -52,7 +53,9 @@ return {
         capabilities = require("blink.cmp").get_lsp_capabilities(),
       })
       vim.lsp.enable("clangd")
+      ------------------------ C/C++ END ------------------------
 
+      ------------------------ nix START ------------------------
       vim.lsp.config("nixd", {
         cmd = { "nixd" },
         filetypes = { "nix" },
@@ -82,6 +85,16 @@ return {
         }
       })
       vim.lsp.enable("nixd")
+      ------------------------ nix END ------------------------
+
+      ------------------------ markdown START ------------------------
+      vim.lsp.config("marksman", {
+        filetypes = { "markdown", "markdown.mdx" },
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
+        root_markers = { ".marksman.toml", ".git" },
+      })
+      vim.lsp.enable("marksman")
+      ------------------------ markdown END ------------------------
     end,
   },
   {
@@ -93,6 +106,9 @@ return {
     dependencies = {
       "mason-org/mason.nvim",
       "neovim/nvim-lspconfig",
+    },
+    opts = {
+      ensure_installed = {},
     },
   }
 }
