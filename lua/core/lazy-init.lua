@@ -21,6 +21,6 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "oldworld" } },
+  install = { colorscheme = { "mini-base16" } },
   checker = { enabled = true, notify = false },
 })
