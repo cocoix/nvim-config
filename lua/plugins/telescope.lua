@@ -6,6 +6,15 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
 
+  opts = {
+    defaults = {
+      sorting_strategy = "ascending",
+      layout_config = {
+        prompt_position = "top",
+      },
+    },
+  },
+
   keys = {
     vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files() end,
       { desc = "Files" }),

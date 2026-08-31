@@ -1,3 +1,5 @@
+local is_nixos = vim.uv.fs_stat("/etc/NIXOS") ~= nil
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
@@ -23,4 +25,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "mini-base16" } },
   checker = { enabled = true, notify = false },
+  rocks = { hererocks = not is_nixos }, -- Always use luarocks on NixOS
 })
+
+
