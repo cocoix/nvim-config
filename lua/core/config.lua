@@ -33,3 +33,5 @@ vim.opt.autoindent = true
 vim.opt.smartindent = false
 
 vim.opt.signcolumn = "yes"
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
