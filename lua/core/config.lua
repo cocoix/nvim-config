@@ -34,4 +34,15 @@ vim.opt.smartindent = false
 
 vim.opt.signcolumn = "yes"
 
+-- Nerd Font glyphs live in Unicode's Private Use Areas and are rendered as
+-- two cells by the terminal. Keep Neovim's display-width calculations aligned.
+vim.fn.setcellwidths({
+  { 0xE000, 0xF8FF, 2 },       -- Private Use Area
+  { 0xF0000, 0xFFFFD, 2 },     -- Supplementary Private Use Area-A
+  { 0x100000, 0x10FFFD, 2 },   -- Supplementary Private Use Area-B
+})
+
+-- obsidian.nvim
+vim.opt.conceallevel = 2
+
 vim.keymap.set("n", "gV", "`[v`]", { desc = "选择上次修改/粘贴的文本" })
