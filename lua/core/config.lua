@@ -37,7 +37,11 @@ vim.opt.signcolumn = "yes"
 -- Nerd Font glyphs live in Unicode's Private Use Areas and are rendered as
 -- two cells by the terminal. Keep Neovim's display-width calculations aligned.
 vim.fn.setcellwidths({
-  { 0xE000, 0xF8FF, 2 },       -- Private Use Area
+  { 0xE000, 0xE0B3, 2 },       -- Private Use Area before Powerline separators
+  { 0xE0B4, 0xE0B4, 1 },       -- Powerline right half-circle: 
+  { 0xE0B5, 0xE0B5, 2 },
+  { 0xE0B6, 0xE0B6, 1 },       -- Powerline left half-circle: 
+  { 0xE0B7, 0xF8FF, 2 },       -- Remaining Private Use Area
   { 0xF0000, 0xFFFFD, 2 },     -- Supplementary Private Use Area-A
   { 0x100000, 0x10FFFD, 2 },   -- Supplementary Private Use Area-B
 })
