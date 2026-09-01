@@ -34,4 +34,4 @@ vim.opt.smartindent = false
 
 vim.opt.signcolumn = "yes"
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gV", "`[v`]", { desc = "选择上次修改/粘贴的文本" })
