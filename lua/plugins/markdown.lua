@@ -11,6 +11,7 @@ return {
       completions = {
         lsp = { enabled = true }
       },
+      preset = "obsidian", -- none | obsidian | lazy
       heading = {
         -- PUA glyphs are configured as double-width, so a trailing space
         -- would make sign_text three cells wide and Neovim would reject it.
@@ -25,6 +26,7 @@ return {
     ---@type obsidian.config
     opts = {
       legacy_commands = false, -- this will be removed in 4.0.0
+      ui = { enable = false },
       workspaces = {
         {
           name = "Moss",
