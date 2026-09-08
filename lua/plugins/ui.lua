@@ -9,7 +9,7 @@ return {
         section_separators = { left = "", right = "" },
       },
       sections = {
-        lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+        lualine_a = { { "mode", separator = { left = "" } } },
         lualine_b = { "filename", { "branch", icon = "󰘬" } },
         lualine_c = {
           "%=", --[[ add your center components here in place of this comment ]]
@@ -17,7 +17,7 @@ return {
         lualine_x = {},
         lualine_y = { "filetype", "progress" },
         lualine_z = {
-          { "location", separator = { right = "" }, left_padding = 2 },
+          { "location", separator = { right = "" } },
         },
       },
       inactive_sections = {
