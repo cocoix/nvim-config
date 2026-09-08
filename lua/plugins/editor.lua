@@ -22,9 +22,12 @@ return {
     opts = {
       modes = {
         char = {
-          multi_line = false,
+          enabled = false;
         },
       },
+      prompt = {
+        prefix = { { "" } }
+      }
     },
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
