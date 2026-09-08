@@ -1,0 +1,4 @@
+interface:
+  display_name: "Neovim Plugin Config"
+  short_description: "Install and configure plugins in this Neovim setup"
+  default_prompt: "Use $nvim-plugin-config to install or modify a plugin in my current Neovim configuration."
