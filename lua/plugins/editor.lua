@@ -1,5 +1,11 @@
 return {
   {
+    "nvim-mini/mini.ai",
+    version = false,
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {}
