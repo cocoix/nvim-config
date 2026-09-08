@@ -31,11 +31,11 @@ return {
 
       ------------------------ C/C++ START ------------------------
       vim.lsp.config("clangd", {
+        -- 如果需要展示每个同名函数，添加 "--completion-style=detailed" 选项
         cmd = {
           "clangd",
           "--background-index",
           "--clang-tidy",
-          "--completion-style=detailed",
           "--header-insertion=iwyu",
         },
         filetypes = {
